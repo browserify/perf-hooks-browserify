@@ -25,6 +25,6 @@
   "scripts": {
     "test": "standard && npm run test:node && npm run test:browser",
     "test:node": "node test | tap-spec",
-    "test:browser": "browserify test | tape-run | tap-spec"
+    "test:browser": "browserify test -r ./:perf_hooks | tape-run | tap-spec"
   }
 }
