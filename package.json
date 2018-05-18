@@ -1,0 +1,30 @@
+{
+  "name": "perf-hooks-browserify",
+  "description": "The perf_hooks node module API for browserify",
+  "version": "0.0.0",
+  "author": "Renée Kooi <renee@kooi.me>",
+  "bugs": {
+    "url": "https://github.com/goto-bus-stop/perf-hooks-browserify/issues"
+  },
+  "devDependencies": {
+    "browserify": "^16.2.2",
+    "standard": "^11.0.0",
+    "tap-spec": "^4.0.2",
+    "tape": "^4.0.0",
+    "tape-run": "^4.0.0"
+  },
+  "homepage": "https://github.com/goto-bus-stop/perf-hooks-browserify",
+  "keywords": [],
+  "license": "Apache-2.0",
+  "main": "index.js",
+  "browser": "browser.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/goto-bus-stop/perf-hooks-browserify.git"
+  },
+  "scripts": {
+    "test": "standard && npm run test:node && npm run test:browser",
+    "test:node": "node test | tap-spec",
+    "test:browser": "browserify test | tape-run | tap-spec"
+  }
+}
