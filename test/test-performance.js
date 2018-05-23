@@ -37,7 +37,7 @@ test('performance.measure', function (t) {
   [undefined, null, 'foo', 1].forEach(function (i) {
     t.throws(
       function () { performance.measure('test', 'A', i) },
-      `The "${i}" performance mark has not been set`
+      new RegExp(`The "${i}" performance mark has not been set$`)
     )
   })
 

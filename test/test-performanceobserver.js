@@ -17,13 +17,13 @@ test(function (t) {
   [1, null, undefined].forEach(function (input) {
     t.throws(
       function () { observer.observe(input) },
-      `The "options" argument must be of type Object. Received type ${typeof input}`
+      new RegExp(`The "options" argument must be of type Object. Received type ${typeof input}$`)
     )
   });
 
   [1, undefined, null, {}, Infinity].forEach(function (i) {
     t.throws(function () { observer.observe({ entryTypes: i }) },
-      'The value "[object Object]" is invalid for option "entryTypes"'
+      /The value "\[object Object\]" is invalid for option "entryTypes"$/
     )
   })
 
