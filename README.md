@@ -1,6 +1,6 @@
 # perf-hooks-browserify
 
-The perf_hooks node module API for browserify
+The `perf_hooks` node module API for browserify
 
 [![npm][npm-image]][npm-url]
 [![travis][travis-image]][travis-url]

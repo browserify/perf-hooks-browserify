@@ -1,4 +1,8 @@
 /* eslint-env browser */
+
+var performance = global.performance
+var PerformanceObserver = global.PerformanceObserver
+
 var nodeTiming = {}
 
 // Does not do anything right now.
