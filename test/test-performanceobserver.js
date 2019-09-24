@@ -34,7 +34,7 @@ test(function (t) {
 })
 
 // Test Non-Buffered
-test('non-buffered', function (t) {
+test('non-buffered', { skip: process.browser }, function (t) {
   var observer =
     new PerformanceObserver(callback)
 

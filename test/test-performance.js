@@ -55,7 +55,7 @@ test('measurement', function (t) {
   })
 })
 
-test('nodeTiming', function (t) {
+test('nodeTiming', { skip: process.browser }, function (t) {
   t.strictEqual(performance.nodeTiming.name, 'node')
   t.strictEqual(performance.nodeTiming.entryType, 'node')
   t.end()

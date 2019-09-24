@@ -14,6 +14,11 @@ function timerify (fn) {
 }
 
 function measure (name, startMark, endMark) {
+  // Allowed in the browser but not in Node.js
+  if (endMark === undefined) {
+    throw new Error('The mark \'undefined\' does not exist')
+  }
+
   try {
     return performance.measure(name, startMark, endMark)
   } catch (error) {
