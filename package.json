@@ -23,7 +23,8 @@
     "url": "https://github.com/goto-bus-stop/perf-hooks-browserify.git"
   },
   "scripts": {
-    "test": "standard && npm run test:node && npm run test:browser",
+    "test": "npm run test:lint && npm run test:node && npm run test:browser",
+    "test:lint": "standard",
     "test:node": "node test | tap-spec",
     "test:browser": "browserify test -r ./:perf_hooks | tape-run | tap-spec"
   }
