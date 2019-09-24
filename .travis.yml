@@ -5,7 +5,7 @@ node_js:
   - "8"
 
 script:
-  - 'if [ $TRAVIS_NODE_VERSION == stable ]; then npm run lint; fi'
+  - 'if [ $TRAVIS_NODE_VERSION == stable ]; then npm run test:lint; fi'
   - npm run test:node
   - xvfb-run --auto-servernum npm run test:browser
 services:
