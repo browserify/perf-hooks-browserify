@@ -13,10 +13,22 @@ function timerify (fn) {
   return fn
 }
 
+function measure (name, startMark, endMark) {
+  try {
+    return performance.measure(name, startMark, endMark)
+  } catch (error) {
+    // Handle case where browsers will throw when `startMark` does not exist, while Node.js defaults to 0
+    if (error.message.indexOf('The mark \'' + startMark + '\' does not exist') !== -1) {
+      return performance.measure(name, undefined, endMark)
+    }
+    throw error
+  }
+}
+
 exports.performance = {
   clearMarks: performance.clearMarks.bind(performance),
   mark: performance.mark.bind(performance),
-  measure: performance.measure.bind(performance),
+  measure: measure,
   now: performance.now.bind(performance),
   nodeTiming: nodeTiming,
   timeOrigin: performance.timeOrigin,
